@@ -7,54 +7,18 @@ public class RockPaperScissors {
 	public static void main (String[]args)
 	{ 
 		Random rand = new Random();
-		String arrayForGame[] = {"Rock", "Paper", "Scissors"}; 
+		Paper paper = new Paper();
+		Scissor scissors = new Scissor();
+		Rock rock = new Rock();
+		
+		GameRules newGame = new GameRules();
+		PlayerMove arrayForGame[] = {rock, paper, scissors}; 
 		int index = rand.nextInt(arrayForGame.length);
-		String computerChoice = arrayForGame[index]; 
+		PlayerMove computerChoice = arrayForGame[index]; 
 		System.out.println(computerChoice);
-		Game("Rock", computerChoice);  
+		System.out.println(newGame.showResult(rock, computerChoice));
 	}
  	
-	public static String Game (String userChoice, String computerChoice)
-	{
-		if	 
-			(userChoice == "Rock" && computerChoice == "Scissors") {
-			return "Win";
-		}
-		else if 
-			(userChoice == "Rock" && computerChoice == "Paper") {
-			return "Lose";
-		}
-		else if 
-			(userChoice == "Rock" && computerChoice == "Rock") {
-			return "Draw";
-		}
-		else if  
-			(userChoice == "Paper" && computerChoice == "Scissors") {
-			return "Lose";
-		}
-		else if 
-			(userChoice == "Paper" && computerChoice == "Paper") {
-			return "Draw";
-		}
-		else if 
-			(userChoice == "Paper" && computerChoice == "Rock") {
-			return "Win";
-		}
-		else if 
-			(userChoice == "Scissors" && computerChoice == "Scissors") {
-			return "Draw";
-		}
-		else if 
-			(userChoice == "Scissors" && computerChoice == "Paper") {
-			return "Win";
-		}
-		else if(userChoice == "Scissors" && computerChoice == "Rock") {
-			return "Lose";
-		}
-		else 
-		{ 
-			return "Error"; 
-		}
-		
-	}
+	
 }
+
